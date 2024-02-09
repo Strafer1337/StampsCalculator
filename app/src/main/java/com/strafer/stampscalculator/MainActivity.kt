@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<TextInputLayout>(R.id.weightInputLayout)
+        val textInputLayout = findViewById<TextInputLayout>(R.id.weightInputLayout)
         val weightInputEditText = findViewById<TextInputEditText>(R.id.weightInputEditText)
 
         val spacing = findViewById<Space>(R.id.spacing)
@@ -24,12 +24,21 @@ class MainActivity : AppCompatActivity() {
         val calculateButton = findViewById<Button>(R.id.calculateButton)
         calculateButton.setOnClickListener {
             hideKeyboard(weightInputEditText)
-            Calculator.calculateWeight(weightInputEditText.text.toString().toDoubleOrNull())
-            spacing.visibility = View.GONE
+            if (weightInputEditText.text?.isNotEmpty() == true) {
+                textInputLayout.error = ""
+                Calculator.calculateWeight(weightInputEditText.text.toString().toDouble())
+                spacing.visibility = View.GONE
 
-            // TODO можно записать все 3 вариации слова рубль в ресурсы
-            resultTextView.text = "Стоимость марок на конверте должна составлять\n\n${Calculator.weight} ${Calculator.getLiteral()}"
-            resultTextView.visibility = View.VISIBLE
+                // TODO можно записать все 3 вариации слова рубль в ресурсы
+                resultTextView.text = "Стоимость марок на конверте должна составлять\n\n${Calculator.weight} ${Calculator.getLiteral()}"
+                resultTextView.visibility = View.VISIBLE
+
+            } else {
+                textInputLayout.error = getString(R.string.empty_field)
+                resultTextView.visibility = View.GONE
+                spacing.visibility = View.VISIBLE
+            }
+
         }
 
     }
