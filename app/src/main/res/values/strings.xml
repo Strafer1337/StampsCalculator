@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StampsCalculator</string>
+    <string name="enter_weight">Введите вес письма</string>
+    <string name="calculate">Расчитать</string>
+</resources>
