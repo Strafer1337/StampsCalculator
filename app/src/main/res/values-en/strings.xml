@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_weight">Enter Letter weight</string>
+    <string name="calculate">Calculate</string>
+    <string name="empty_field">Empty input field</string>
+    <string name="enter_valid_number">Enter correct number</string>
+    <string name="result_starting_text">Stamps cost should be\n\n%1$s %2$s</string>
+</resources>

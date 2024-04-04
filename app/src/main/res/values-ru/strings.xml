@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">StampsCalculator</string>
     <string name="enter_weight">Введите вес письма</string>
     <string name="calculate">Расчитать</string>
     <string name="empty_field">Пустое поле ввода!</string>
