@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/weightInputLayout"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="@string/enter_weight"
-        tools:context=".MainActivity">
+        tools:context=".activities.MainActivity">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/weightInputEditText"
@@ -28,10 +28,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:visibility="visible" />
+        android:visibility="visible"
+        tools:visibility="gone"/>
 
     <TextView
         android:id="@+id/resultTextView"
+        android:freezesText="true"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
@@ -42,6 +44,7 @@
         android:textSize="24sp"
         android:visibility="gone"
         tools:text="Стоимость марок на конверте должна составлять\n\n22 рубля"
+        tools:visibility="visible"
          />
 
     <Button
