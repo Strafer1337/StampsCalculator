@@ -1,4 +1,4 @@
-package com.strafer.stampscalculator.utils
+package com.strafer.stampscalculator
 
 import kotlin.math.ceil
 

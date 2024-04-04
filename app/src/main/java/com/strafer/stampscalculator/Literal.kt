@@ -1,4 +1,4 @@
-package com.strafer.stampscalculator.utils
+package com.strafer.stampscalculator
 
 class Literal {
     fun getLiteral(weight: String): String =

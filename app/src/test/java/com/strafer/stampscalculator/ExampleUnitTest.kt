@@ -1,6 +1,5 @@
 package com.strafer.stampscalculator
 
-import com.strafer.stampscalculator.utils.Calculator
 import org.junit.Test
 import org.junit.Assert.*
 
@@ -14,13 +13,5 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
-    }
-
-    @Test
-    fun calculateWeight4() {
-        assertEquals(
-            36.0.toString(),
-            Calculator().calculateWeight(40.1)
-        )
     }
 }

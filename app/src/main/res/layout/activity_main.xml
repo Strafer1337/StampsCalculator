@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.MainActivity">
+    tools:context=".MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/weightInputLayout"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="@string/enter_weight"
-        tools:context=".activities.MainActivity">
+        tools:context=".MainActivity">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/weightInputEditText"
