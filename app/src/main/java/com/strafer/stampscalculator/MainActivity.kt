@@ -2,11 +2,10 @@ package com.strafer.stampscalculator
 
 import android.app.Application
 import android.os.Bundle
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.strafer.stampscalculator.databinding.ActivityMainBinding
+import com.strafer.stampscalculator.hideKeyboard
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = (Application() as MyApp).viewModel
+        viewModel = (application as MyApp).viewModel
 
         uiStateObserver = Observer {
             it.apply(
@@ -45,9 +44,4 @@ class MainActivity : AppCompatActivity() {
         super.onStop()
         viewModel.liveData.removeObserver(uiStateObserver)
     }
-}
-
-fun AppCompatActivity.hideKeyboard(view: View) {
-    val imm = this.getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE) as InputMethodManager
-    imm.hideSoftInputFromWindow(view.windowToken, 0)
 }
