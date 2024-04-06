@@ -1,6 +1,6 @@
-package com.strafer.stampscalculator.utils
+package com.strafer.stampscalculator.utilities
 
-class Literal {
+object Literal {
     fun getLiteral(weight: String): String =
         when (weight.split('.')[0].last()) {
             '1' -> "рубль"

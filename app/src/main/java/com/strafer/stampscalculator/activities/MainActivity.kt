@@ -5,14 +5,13 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import com.strafer.stampscalculator.R
-import com.strafer.stampscalculator.utils.Calculator
-import com.strafer.stampscalculator.utils.Literal
+import com.strafer.stampscalculator.utilities.Calculator
+import com.strafer.stampscalculator.utilities.Literal
 import com.strafer.stampscalculator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val calculator = Calculator()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +29,8 @@ class MainActivity : AppCompatActivity() {
                 binding.spacing.visibility = View.VISIBLE
             } else {
                 binding.weightInputLayout.error = ""
-                val result = calculator.calculateWeight(weight.toDouble())
-                val literal = Literal().getLiteral(result)
+                val result = Calculator.calculateWeight(weight.toDouble())
+                val literal = Literal.getLiteral(result)
 
                 binding.resultTextView.visibility = View.VISIBLE
                 binding.spacing.visibility = View.GONE
