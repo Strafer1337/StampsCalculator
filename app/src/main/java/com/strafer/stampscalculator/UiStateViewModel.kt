@@ -2,8 +2,9 @@ package com.strafer.stampscalculator
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 
-class UiStateViewModel(application: Application) : AndroidViewModel(application) {
+class UiStateViewModel : ViewModel() {
 
     val liveData = UiStateLiveData()
 
