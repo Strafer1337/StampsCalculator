@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.Space
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputLayout
+import com.strafer.stampscalculator.utilities.Calculator
+import com.strafer.stampscalculator.utilities.Literal
 
 interface UiState {
 
@@ -23,8 +25,8 @@ interface UiState {
             weightInputLayout.error = ""
 
             val weight = weightInputLayout.editText!!.text.toString()
-            val result = Calculator().calculateWeight(weight.toDouble())
-            val literal = Literal().getLiteral(result)
+            val result = Calculator.calculateWeight(weight.toDouble())
+            val literal = Literal.getLiteral(result)
 
             resultTextView.visibility = View.VISIBLE
             spacing.visibility = View.GONE
