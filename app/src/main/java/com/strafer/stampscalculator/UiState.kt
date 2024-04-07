@@ -4,9 +4,8 @@ import android.app.Application
 import android.view.View
 import android.widget.Space
 import android.widget.TextView
+import androidx.core.content.ContextCompat.getString
 import com.google.android.material.textfield.TextInputLayout
-import com.strafer.stampscalculator.utilities.Calculator
-import com.strafer.stampscalculator.utilities.Literal
 
 interface UiState {
 
@@ -16,34 +15,33 @@ interface UiState {
         spacing: Space
     )
 
-    object Success : UiState {
+    class Success(private val result: String) : UiState {
         override fun apply(
             weightInputLayout: TextInputLayout,
             resultTextView: TextView,
             spacing: Space
         ) {
             weightInputLayout.error = ""
-
-            val weight = weightInputLayout.editText!!.text.toString()
-            val result = Calculator.calculateWeight(weight.toDouble())
-            val literal = Literal.getLiteral(result)
-
             resultTextView.visibility = View.VISIBLE
             spacing.visibility = View.GONE
 
+            // probably memory leak with passing the context
+            // doesn't work with getString, and no context
+
+            // TODO решить вопрос с получением ресурсов внутри UiState
             resultTextView.text =
-                Application().getString(R.string.result_starting_text, result, literal)
+                "Стоимость марок на конверте должна составлять\n\n$result руб."
 
         }
     }
 
-    object Error : UiState {
+    class Error : UiState {
         override fun apply(
             weightInputLayout: TextInputLayout,
             resultTextView: TextView,
             spacing: Space
         ) {
-            weightInputLayout.error = Application().getString(R.string.empty_field)
+            weightInputLayout.error = "Пустое поле ввода!"
             resultTextView.visibility = View.GONE
             spacing.visibility = View.VISIBLE
         }

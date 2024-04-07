@@ -1,16 +1,15 @@
 package com.strafer.stampscalculator
 
-import android.app.Application
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.strafer.stampscalculator.databinding.ActivityMainBinding
-import com.strafer.stampscalculator.hideKeyboard
+import com.strafer.stampscalculator.utilities.hideKeyboard
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
     private lateinit var viewModel: UiStateViewModel
     private lateinit var uiStateObserver: Observer<UiState>
 
@@ -20,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel = (application as MyApp).viewModel
+        // viewModel = ViewModelProvider(this)[UiStateViewModel::class.java]
 
         uiStateObserver = Observer {
             it.apply(

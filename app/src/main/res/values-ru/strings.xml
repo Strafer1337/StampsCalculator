@@ -4,5 +4,5 @@
     <string name="calculate">Расчитать</string>
     <string name="empty_field">Пустое поле ввода!</string>
     <string name="enter_valid_number">Введите верное число</string>
-    <string name="result_starting_text">Стоимость марок на конверте должна составлять\n\n%1$s %2$s</string>
+    <string name="result_starting_text">Стоимость марок на конверте должна составлять\n\n%1$s руб.</string>
 </resources>

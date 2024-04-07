@@ -1,4 +1,4 @@
-package com.strafer.stampscalculator
+package com.strafer.stampscalculator.utilities
 
 import android.view.View
 import android.view.inputmethod.InputMethodManager

@@ -4,5 +4,5 @@
     <string name="calculate">Calculate</string>
     <string name="empty_field">Empty input field</string>
     <string name="enter_valid_number">Enter correct number</string>
-    <string name="result_starting_text">Stamps cost should be\n\n%1$s %2$s</string>
+    <string name="result_starting_text">Stamps cost should be\n\n%1$s rub.</string>
 </resources>
