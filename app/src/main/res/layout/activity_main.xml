@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout android:id="@+id/rootLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.MainActivity">
+    tools:context=".presentation.MainActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/weightInputLayout"
@@ -13,14 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        app:boxStrokeColor="@color/purple"
+        app:hintTextColor="@color/black"
+        app:cursorColor="@color/purple"
         android:hint="@string/enter_weight"
-        tools:context=".activities.MainActivity">
+        tools:context=".presentation.MainActivity">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/weightInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <Space
@@ -29,31 +34,52 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:visibility="visible"
-        tools:visibility="gone"/>
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/resultTextView"
-        android:freezesText="true"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_marginHorizontal="32dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_weight="1"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textSize="24sp"
         android:visibility="gone"
         tools:text="Стоимость марок на конверте должна составлять\n\n22 рубля"
-        tools:visibility="visible"
-         />
+        tools:visibility="visible" />
 
-    <Button
-        android:id="@+id/calculateButton"
-        style="@style/Widget.MaterialComponents.Button"
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/calculate" />
+        android:layout_marginBottom="16dp">
 
+        <Button
+            android:id="@+id/calculateButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/purple"
+            android:layout_weight="1"
+            android:text="@string/calculate" />
 
+        <Space
+            android:id="@+id/buttonSpacing"
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/clearButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/orange"
+            android:text="@string/clearScreen" />
+
+    </LinearLayout>
 </LinearLayout>

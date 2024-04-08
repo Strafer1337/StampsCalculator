@@ -6,7 +6,7 @@ import org.junit.Test
 class CalculatorTest {
 
     @Test
-    fun calculateWeight() {
+    fun calculateWeight0() {
         assertEquals(
             29.0.toString(),
             Calculator.calculateWeight(0.0)
